@@ -5,8 +5,8 @@ php:
   - 5.6
 
 before_script:
-  - curl -s http://getcomposer.org/installer | php
-  - COMPOSER_ROOT_VERSION=dev-master php composer.phar install --dev
+  - phpenv config-rm xdebug.ini || return 0
+  - composer install --dev
 
 script:
   - bin/atoum
